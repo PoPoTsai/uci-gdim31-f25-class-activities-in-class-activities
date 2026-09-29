@@ -1,7 +1,10 @@
 # in-class-activities
 ## Devlogs
 ### W1
-Write your W1 activity Devlog here.
+Moving the camera off the "cat" game object causes the cat to move without the camera following. This is because the camera component is no longer synced with the Cat game object, causing the
+player code file to no longer apply to the camera, and thus creates this issue where the cat will run off without you following when using WASD.
+
+Itch page: https://popotsai.itch.io/w1-in-class-activity-cat-movement
 
 ### W2
 Create future Devlog sub-headers with the three # symbols, then write your Devlogs below them.
