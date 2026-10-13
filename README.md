@@ -23,17 +23,17 @@ Activity 1: Table 4
 
 Activity 2: Table 4
 
-    We chose to compare a method to an ingredient on a taco, that can be prepared in any way you want through the member variables as spices or flavorings for your method topping. This one
-    topping can be many ingredients, like ground beef, lettuce, cheese, etc. but all have a purpose. Then once prepared and cooked by the member variables, it will then be put onto a tortilla
-    which would be the equivalent to setting up a class, able to hold many other ingredients/methods that define what the finished class would be. You then take the fully prepared taco/class
-    that can function for many things based on the ingredients/methods inside it, for instance a beef taco being a component, or whatever else you may want. The taco class can then be plated
-    for your game to be used in the scene and function however you want it to.
+We chose to compare a method to an ingredient on a taco, that can be prepared in any way you want through the member variables as spices or flavorings for your method topping. This one
+topping can be many ingredients, like ground beef, lettuce, cheese, etc. but all have a purpose. Then once prepared and cooked by the member variables, it will then be put onto a tortilla
+which would be the equivalent to setting up a class, able to hold many other ingredients/methods that define what the finished class would be. You then take the fully prepared taco/class
+that can function for many things based on the ingredients/methods inside it, for instance a beef taco being a component, or whatever else you may want. The taco class can then be plated
+for your game to be used in the scene and function however you want it to.
 
 Activity 3:
 
-    The ball appears to get extremely bright to the point of becoming white the faster they move, because of how color works. Since we know the value for white is color(1, 1, 1), meaning as
-    long as the original set rgb values for color are greater than 0, then they will continuously multiply. And as they bounce, the multiplier continues to increase each r, g, and b value
-    until reaching the cap of 1, causing all the balls to appear extremely bright as they bounce multiple times at faster and faster speeds.
+The ball appears to get extremely bright to the point of becoming white the faster they move, because of how color works. Since we know the value for white is color(1, 1, 1), meaning as
+long as the original set rgb values for color are greater than 0, then they will continuously multiply. And as they bounce, the multiplier continues to increase each r, g, and b value
+until reaching the cap of 1, causing all the balls to appear extremely bright as they bounce multiple times at faster and faster speeds.
 
 ## Open-Source Assets
 ### W1
