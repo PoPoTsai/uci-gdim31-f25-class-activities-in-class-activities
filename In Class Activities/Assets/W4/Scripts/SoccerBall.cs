@@ -8,6 +8,9 @@ public class SoccerBall : MonoBehaviour
     [SerializeField] private TMP_Text _timeText;
     [SerializeField] private ParticleSystem _goalVFX;
 
+    [SerializeField] private int _points;
+    [SerializeField] private float _time;
+
     // STEP 1 -----------------------------------------------------------------
     // The OnTriggerEnter method is a collision method called by Unity that
     //      tells our object when it's hit a collider with Is Trigger checked.
@@ -21,10 +24,15 @@ public class SoccerBall : MonoBehaviour
     //
     // Also, uncomment and FIX the Debug.Log line.
 
-    //private ?? ??
-    //{
+    private void Update()
+    {
+        _time += Time.deltaTime;
+        _timeText.text = "Time since last goal: " + _time;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
         // finish STEP 1 by uncommenting and fixing the below line!
-        //Debug.Log(SoccerBall detected a collision with a trigger collider!);
 
         // STEP 2 -------------------------------------------------------------
         // Write an IF STATEMENT to check if the game object we collided with
@@ -33,10 +41,14 @@ public class SoccerBall : MonoBehaviour
         //
         // Then, move your Debug.Log() statement so that it's only called if
         //      the colliding object has the "Goal" tag.
-
+        if (other.gameObject.tag.Equals("Goal"))
+        {
+            Debug.Log("SoccerBall detected a collision with a trigger collider!");
+            MadeGoal();
+        }
 
         // STEP 2 -------------------------------------------------------------
-    //}
+    }
 
     // STEP 1 -----------------------------------------------------------------
 
@@ -49,19 +61,23 @@ public class SoccerBall : MonoBehaviour
     // Once you've created MadeGoal,
     //      move your Debug.Log() statement into MadeGoal, and
     //      call MadeGoal from inside your if statement in OnTriggerEnter.
-    
+    private void MadeGoal()
+    {
+        Debug.Log("SoccerBall detected a collision with a trigger collider!");
         // STEP 4 -------------------------------------------------------------
         // _goalVFX is a ParticleSystem, a Component for creating VFX.
         // ParticleSystem has a method named Play() that displays the VFX:
         // https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ParticleSystem.Play.html 
         //
         // Call Play on _goalVFX.
-
+        _goalVFX.Play();
         // STEP 4 -------------------------------------------------------------
-    
-    
-    // STEP 3 -----------------------------------------------------------------
+        _points++;
+        _pointsText.text = "points: " + _points;
 
+        // STEP 3 -----------------------------------------------------------------
+        _time = 0f;
+    }
 
     // STEP 5 -----------------------------------------------------------------
     // I am doing something evil, but I believe in you.

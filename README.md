@@ -35,6 +35,13 @@ The ball appears to get extremely bright to the point of becoming white the fast
 long as the original set rgb values for color are greater than 0, then they will continuously multiply. And as they bounce, the multiplier continues to increase each r, g, and b value
 until reaching the cap of 1, causing all the balls to appear extremely bright as they bounce multiple times at faster and faster speeds.
 
+Activity 4: Table 9
+
+1) For the collider activity, we decided that both the cat and soccer ball game object needed a rigibody, and only checked the Trigger on the goal. This is because, creating a trigger on either the cat or the soccer ball would cause them to phase through the ground, creating extra issues, as well as these objects not needing to necessarily trigger any events themselves and
+rather need to physically involve themselves with other each other. And so, that lead us to give both the cat and soccer ball with rigibodies, and also since the goal was the only object that
+needed to check whenever a ball enterred it, would therefore deserve a trigger. Not to mention, the goal itself was just an object meant to stay still and unmovable, therefore it did not need
+a rigibody, and could keep the trigger on without phasing through the ground object.
+
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
