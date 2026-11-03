@@ -43,6 +43,13 @@ rather need to physically involve themselves with other each other. And so, that
 needed to check whenever a ball enterred it, would therefore deserve a trigger. Not to mention, the goal itself was just an object meant to stay still and unmovable, therefore it did not need
 a rigibody, and could keep the trigger on without phasing through the ground object.
 
+
+### W6
+1) This DeerW5 Class, will obviously need a member variable transform of the target that we are going for, as well as ensuring it has the "[SerializeField]" tag with it, to ensure that this
+object is interchangeable in the inspector. We also may need a NavMeshAgent object for the deer, as per the instructions, to visually control the NavMesh of the deer that we will then need to move towards its target.
+2) We will definetly need a Start() method to instantialize elements of the Deer such as its NavMesh, as well as at least an Update() method that will, for every frame the game runs, allows the deer to actually move towards object. From here, we may need an additional method to tell the deer what they should move towards, but I believe this is also possible to simply put into the Update function, if short enough.
+3) The Start() method would need to utilize GetComponent on the NavMeshAgent component to gain access to the deer's NavMesh, and instantialize it under a given name.  Then with the Update() method, all we really need to do is use the SetDestination function for our NavMeshAgent object from the NavMeshAgent class, and move it towards the target's position, so that the function will do the rest from here, and will continue moving the NavMesh of the deer every frame until reaching said object.
+
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
