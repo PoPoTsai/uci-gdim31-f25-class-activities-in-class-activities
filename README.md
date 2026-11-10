@@ -50,6 +50,13 @@ object is interchangeable in the inspector. We also may need a NavMeshAgent obje
 2) We will definetly need a Start() method to instantialize elements of the Deer such as its NavMesh, as well as at least an Update() method that will, for every frame the game runs, allows the deer to actually move towards object. From here, we may need an additional method to tell the deer what they should move towards, but I believe this is also possible to simply put into the Update function, if short enough.
 3) The Start() method would need to utilize GetComponent on the NavMeshAgent component to gain access to the deer's NavMesh, and instantialize it under a given name.  Then with the Update() method, all we really need to do is use the SetDestination function for our NavMeshAgent object from the NavMeshAgent class, and move it towards the target's position, so that the function will do the rest from here, and will continue moving the NavMesh of the deer every frame until reaching said object.
 
+### W7
+https://docs.google.com/document/d/1R_bArpdyWDk7oLt_Y6eFAooJNsrQ6vkbxEgePz7vyaA/edit?tab=t.0
+Notes: I am going to need a variable that labels the player's transform, as well as the float speed variable that is given a serializedfield. Then I am going to need at least 1 method
+that will then move the bats towards the player in my Bat method. Then hopefully from here, I can have the batmanager take control of the situation and begin to navigate within certain
+boundaries and fields on when the bats actually begin to chase the player.
+
+
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
