@@ -56,6 +56,12 @@ Notes: I am going to need a variable that labels the player's transform, as well
 that will then move the bats towards the player in my Bat method. Then hopefully from here, I can have the batmanager take control of the situation and begin to navigate within certain
 boundaries and fields on when the bats actually begin to chase the player.
 
+### W8
+The issue with the code in step 2 was due to how it utilize the World Space, with transform.position, in order to move the muskrat, and therefore invalidating changes to say rotation that
+should be delt with on the muskrat's local space. And although there are multiple ways to do this, I opted for using the Translate method for transform, which therefor functions based on
+the object's personal space, and can be adjusted based on direction and rotation for moving forward and backwards. Although there are other ways to do this, like adjusting Vector3.forward
+since that also works on the world space, but this was just what had worked for me.
+
 
 ## Open-Source Assets
 ### W1

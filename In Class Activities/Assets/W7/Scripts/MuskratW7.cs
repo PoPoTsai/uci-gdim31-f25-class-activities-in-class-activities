@@ -46,7 +46,8 @@ public class MuskratW7 : MonoBehaviour
         // You might want to look below Step 3 for an example :D
         
         float leftright = Input.GetAxis("Horizontal");
-        
+        Vector3 orbit = transform.TransformDirection(Vector3.up);
+        transform.RotateAround(_sphereTransform.position, orbit, leftright * _rotationSpeed * Time.deltaTime);
 
 
         // STEP 3 -------------------------------------------------------------
@@ -66,6 +67,9 @@ public class MuskratW7 : MonoBehaviour
         // The Muskrat should never play the "flying" animation while on a
         //      bubble.
 
+        _animator.SetBool("running", Mathf.Abs(forward) > 0.0f);
+
+        _animator.SetBool("flying", false);
 
         // STEP 5 -------------------------------------------------------------
     }
@@ -88,7 +92,7 @@ public class MuskratW7 : MonoBehaviour
         float leftright = Input.GetAxis("Horizontal");
 
         // STEP 1 -------------------------------------------------------------
-
+        transform.Rotate(_rotationSpeed * leftright * Vector3.up * Time.deltaTime);
 
         // STEP 2 -------------------------------------------------------------
         float movement = Input.GetAxis("Vertical");
@@ -96,7 +100,7 @@ public class MuskratW7 : MonoBehaviour
         // This line of code is incorrect. 
         // Replace it with a different line of code that uses 'movement' to
         //      move the Muskrat forwards and backwards.
-        transform.position += movement * Vector3.forward * _moveSpeed * Time.deltaTime;
+        transform.Translate(movement * Vector3.forward * _moveSpeed * Time.deltaTime);
 
         // STEP 2 -------------------------------------------------------------
 
@@ -108,7 +112,10 @@ public class MuskratW7 : MonoBehaviour
         // You may also find the absolute value method, Mathf.Abs(), helpful:
         //      https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Mathf.Abs.html
 
-        
+        _animator.SetBool("running", Mathf.Abs(_rigidbody.linearVelocity.magnitude) > 0.0f );
+
+        _animator.SetBool("flying", Mathf.Abs(_rigidbody.linearVelocity.y) > 0.01f);
+
         // STEP 4 -------------------------------------------------------------
     }
 
